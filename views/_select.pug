@@ -1,0 +1,6 @@
+mixin select(name, options, id, required)
+    .form-group
+        label.form-group__label(for=updateId)=name
+        select.form-control(id=updateId required=required name=name)
+          each option in options
+              option(value=option)=option

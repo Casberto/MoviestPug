@@ -1,0 +1,12 @@
+.modal.fade#modalDelete(tabindex=-1 role="dialog" aria-hidden=true)
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header.table-striped.table-dark
+                h5.modal-title#exampleModalLabel Delete movie
+                button.close(type="button" data-dismiss="modal" aria-label="close")
+                    span(aria-hidden=true) &times;
+            .modal-body.table-striped.table-dark Do you really want to delete the movie?
+            .modal-footer.table-striped.table-dark
+                button.btn.btn-outline-light(type="button" data-dismiss="modal") Cancel
+                button.btn.btn-outline-light(onclick="deleteMovie()") Delete
+    script(src="/js/modalDelete.js")

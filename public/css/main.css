@@ -1,0 +1,93 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.poster {
+  width: 100px;
+  height: 160px;
+}
+
+.nomeFilme {
+  font-size: 95px;
+  margin: auto;
+}
+
+.modalPoster {
+  width: 200px;
+  height: 240px;
+}
+
+.center {
+  margin: auto;
+}
+
+/*form {*/
+/*    font-family: Verdana, Tahoma, sans-serif;*/
+/*    font-size: 15px;*/
+/*    max-width: 500px;*/
+/*}*/
+
+/*form label {*/
+/*    margin-left: 20px;*/
+/*    color: #ffffff;*/
+/*    font-weight: bold;*/
+/*}*/
+
+.page {
+  background-color: #1f2937;
+}
+
+.cadastro {
+  height: fit-content;
+  width: 100%;
+  margin: 10px auto auto;
+  padding: 3.2rem 0;
+}
+
+.update {
+  height: fit-content;
+  width: 100%;
+  margin: 10px auto auto;
+}
+
+.titulo {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
+}
+
+.btnPadrao {
+  height: 55px;
+  width: 505px;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px auto auto;
+}
+
+.enviar {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.desc {
+  max-width: 20rem;
+}
+
+.cadastro-filme {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 80px 0;
+}
+
+.form-group__label {
+  text-transform: capitalize;
+}
+
+.alert-center {
+  transition: all 0.3s ease-in;
+  position: sticky;
+  width: fit-content;
+  right: 0;
+  bottom: 5%;
+}

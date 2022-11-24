@@ -1,0 +1,24 @@
+include _formGroup
+include _select
+
+script(src="/js/modalUpdate.js" defer=true)
+
+.modal.fade#modalUpdate(tabindex=-1 role="dialog" aria-hidden=true)
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header.table-striped.table-dark
+                h5.modal-title#exampleModalLabel Update movie
+                button.close(type="button" data-dismiss="modal" aria-label="close")
+                    span(aria-hidden=true) &times;
+            .modal-body.table-striped.table-dark
+                form.update#formUpdate
+                    +formGroup("text", "title", "title", "Laranja Mecânica", "3", "70", true)
+                    +formGroup("text", "description", "description", "O jovem Alex passa as noites com uma gangue de amigos...", "10", "70", true)
+                    +formGroup("text", "director", "director", "Stanley Kubrick", "3", "30", true)
+                    +formGroup("text", "actor", "actor", "Malcolm John Taylor", "5", "70", true)
+                    +formGroup("number", "rating", "rating", "8", 1, 10, true)
+                    +select("genre", ["Action", "Horror", "Thriller", "Adventure", "Drama", "Super-Heroes"], "genre", true)
+                    +formGroup("text", "posterUrl", "posterUrl", "https://linkdoposter/poster.png", "3", "100", true)
+                    +formGroup("date", "releaseDate", "releaseDate", "" , "", "", true)
+                    button.btn.btn-outline-light(type="button" data-dismiss="modal") Cancel
+                    button.btn.btn-outline-light#send(type="submit") Update

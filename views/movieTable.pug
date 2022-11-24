@@ -1,0 +1,43 @@
+extends base
+
+mixin tableRow(id, posterUrl, title, description, director, actor, rating, genre, releaseDate)
+    tr
+        td
+            img.poster(src=posterUrl alt="Movie poster")
+            
+        td=title
+        td.desc=description
+        td=director
+        td=actor
+        td=rating
+        td=genre
+        td=releaseDate.toISOString().substring(0, 10)
+        td
+            button.btn.btn-outline-light(data-toggle="modal"
+                data-target="#modalUpdate" onclick=`updateMovieEvent(${id})` )
+                i.material-icons edit
+        td
+            button.btn.btn-outline-light(data-toggle="modal"
+                data-target="#modalDelete" onclick=`deleteMovieEvent(${id})`)
+                i.material-icons delete
+
+block content
+    .table-container
+        table.table.table-striped.table-dark
+            thead
+                tr
+                    th(scope="col") Poster
+                    th(scope="col") Title
+                    th(scope="col") Synopsis
+                    th(scope="col") Director
+                    th(scope="col") Actors
+                    th(scope="col") Rating
+                    th(scope="col") Genre
+                    th(scope="col") Release date
+            tbody
+              each movie in movies
+                - const {dataValues: { id, posterUrl, director, genre, releaseDate,title, actor,description, rating}} = movie;
+                +tableRow(id, posterUrl, title, description, director, actor, rating, genre, releaseDate)
+            include _modalDelete
+            include _modalUpdate
+            script(src="/js/movieTable.js")

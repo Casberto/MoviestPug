@@ -1,0 +1,22 @@
+extends base
+
+include _formGroup
+include _select
+
+block append head
+    script(src="/js/addMovie.js" defer=true)
+
+block content
+    .table.table-striped.table-dark
+        form.cadastro-filme#register-movie
+            h2.titulo REGISTER MOVIE
+            +formGroup("text", "title", "title", "Laranja Mecânica", "3", "70", true)
+            +formGroup("text", "description", "description", "O jovem Alex passa as noites com uma gangue de amigos...", "10", "70", true)
+            +formGroup("text", "director", "director", "Stanley Kubrick", "3", "30", true)
+            +formGroup("text", "actor", "actor", "Malcolm John Taylor", "5", "70", true)
+            +formGroup("number", "rating", "rating", "8", 1, 10, true)
+            +select("genre", ["Action", "Horror", "Thriller", "Adventure", "Drama", "Super-Heroes"], "genre", true)
+            +formGroup("text", "posterUrl", "posterUrl", "https://linkdoposter/poster.png", "3", "100", true)
+            +formGroup("date", "releaseDate", "releaseDate", "" , "", "", true)
+            button.btn.btn-primary.enviar#send(type="submit") Submit
+            a.btn.btn-secondary.enviar(href="/") Cancel
